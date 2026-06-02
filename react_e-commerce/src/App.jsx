@@ -1,14 +1,16 @@
+import Header from "./components/Header";
 
 
 
-function App() {
+function App() { 
+
 
 
   return (
 
     <>
 
-      <h2>Application Heading</h2>
+      <Header />
 
     </>
 
