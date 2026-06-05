@@ -1,5 +1,7 @@
 
 
+import { Link } from "react-router-dom";
+
 
 function Header() {
 
@@ -14,8 +16,17 @@ function Header() {
 
             <div className="header-nav">
 
-                <li>Home</li>
-                <li>Cart</li>
+             <Link to="/">
+             <li>Home</li>    
+             </Link>   
+                
+             <Link to="/cartDetails">
+             <li>Cart</li>    
+             </Link>   
+                
+
+              
+
 
             </div>
 
