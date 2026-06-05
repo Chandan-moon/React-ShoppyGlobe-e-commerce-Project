@@ -1,50 +1,64 @@
 import { useEffect, useState } from "react";
 
+import Cart from "./Cart";
+
 
 function ProductList() {
 
 
-let Api = "https://dummyjson.com/products";
+    let Api = "https://dummyjson.com/products";
 
 
-const [items, setItems] = useState([]);
-
-
-
-
-useEffect(()=> {
-
-async function ApiCall() {
-
-const response = await fetch(Api)
-
-const data = await response.json();
-
-console.log(data.products[0].images)
-
-setItems(data.products[0])
-
-
-}
-
-ApiCall();
-
-
-}, [])
+    const [items, setItems] = useState([]);
 
 
 
 
-return (
+    useEffect(() => {
 
-<div>
+        async function ApiCall() {
 
-<img src={items.images} alt="" width="200px" height="200px" />
+            const response = await fetch(Api)
 
-</div>
+            const data = await response.json();
+
+            setItems(data.products)
 
 
-)
+        }
+
+        ApiCall();
+
+
+    }, [])
+
+
+
+
+    return (
+
+        <div className="productList">
+
+
+            {
+
+                items.map((item) => {
+
+                    return (
+
+                        <Cart key={item.id} productDetails={item} />
+
+                    )
+
+                })
+
+            }
+
+
+        </div>
+
+
+    )
 
 
 }
