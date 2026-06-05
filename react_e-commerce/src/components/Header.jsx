@@ -8,7 +8,7 @@ function Header() {
 
         <div className="header">
 
-            <h1>🛍️ ShoppyGlobe</h1>
+            <h2>🛍️ ShoppyGlobe</h2>
 
             <input type="text" placeholder=" Search products" className="header-input" />
 
