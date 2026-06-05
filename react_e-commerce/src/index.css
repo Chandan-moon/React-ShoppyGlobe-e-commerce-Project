@@ -45,6 +45,8 @@
   justify-content: center;
   flex-wrap: wrap;
 
+  
+
 }
 
 
@@ -60,6 +62,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
   transition: transform 0.2s;
+
+ 
 
 
 }
@@ -88,4 +92,25 @@ transform: scale(1.04);
 .cart-price {
 
   color: rgb(0, 106, 255);
+}
+
+
+.link-line {
+
+ text-decoration: none;
+
+}
+
+
+.ProductDetails {
+
+display: flex;
+
+justify-content: center;
+
+margin-top: 100px;
+
+align-items: center;
+
+
 }

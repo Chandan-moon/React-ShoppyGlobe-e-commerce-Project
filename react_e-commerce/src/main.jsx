@@ -5,6 +5,8 @@ import App from './App.jsx'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Error from './components/Error.jsx';
+import ProductList from './components/ProductList.jsx';
+import ProductDetails from './components/ProductDetails.jsx';
 
 
 
@@ -17,7 +19,20 @@ const appRouter = createBrowserRouter([
 
    children: [
 
+    {
+     path: "/",
+     element: <ProductList />
+
+    },
+
+    {
+
+      path: "/products/:id",
+      element: <ProductDetails />
+
+    }
      
+
 
    ], 
 

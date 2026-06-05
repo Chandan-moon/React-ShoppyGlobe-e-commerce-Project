@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 
 function ProductList() {
@@ -46,7 +47,11 @@ function ProductList() {
 
                     return (
 
-                        <Cart key={item.id} productDetails={item} />
+                       <Link to={`/products/${item.id}`} key={item.id} className="link-line">
+          
+                         <Cart key={item.id} productDetails={item} />
+
+                       </Link>
 
                     )
 
