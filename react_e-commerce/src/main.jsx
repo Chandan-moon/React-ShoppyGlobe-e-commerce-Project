@@ -6,7 +6,11 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Error from './components/Error.jsx';
 import ProductList from './components/ProductList.jsx';
-import ProductDetails from './components/ProductDetails.jsx';
+
+import Home from './components/Home.jsx';
+import Cart from './components/Cart.jsx';
+
+import ProductDetail from './components/ProductDetail.jsx';
 
 
 
@@ -20,19 +24,19 @@ const appRouter = createBrowserRouter([
    children: [
 
     {
-     path: "/",
-     element: <ProductList />
+
+    path: "/",
+    element: <Home />
+
 
     },
 
     {
 
-      path: "/products/:id",
-      element: <ProductDetails />
+      path: "/product/:id",
+      element: <ProductDetail />
 
-    }
-     
-
+    },
 
    ], 
 

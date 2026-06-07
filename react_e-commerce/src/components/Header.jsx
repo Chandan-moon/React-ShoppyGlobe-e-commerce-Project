@@ -14,22 +14,15 @@ function Header() {
 
             <input type="text" placeholder=" Search products" className="header-input" />
 
-            <div className="header-nav">
+            <nav className="nav-menu">
 
-             <Link to="/">
-             <li>Home</li>    
-             </Link>   
-                
-             <Link to="/cartDetails">
-             <li>Cart</li>    
-             </Link>   
-                
+                <Link to="/">Home</Link>
 
-              
+                <Link to="/cart" className="cart-icon">
+                    🛒 Cart <span className="cart-badge">{}</span>
+                </Link>
 
-
-            </div>
-
+            </nav>
 
         </div>
 
@@ -39,6 +32,9 @@ function Header() {
 }
 
 export default Header;
+
+
+
 
 
 
