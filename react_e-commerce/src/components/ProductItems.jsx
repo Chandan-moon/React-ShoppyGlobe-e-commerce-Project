@@ -21,7 +21,7 @@ function ProductItems({ products }) {
 
         <img src={products.images[0]} alt="" width="200px" height="200px" className="cart-img" />
 
-        <h3 className="cart-title">{products.title}</h3>
+        <h3 className="cart-title">{products.title.slice(0, 35)}</h3>
 
         <span className="cart-price">$: {products.price}</span>
 

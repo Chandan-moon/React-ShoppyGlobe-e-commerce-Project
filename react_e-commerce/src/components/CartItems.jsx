@@ -1,22 +1,57 @@
+import { useDispatch } from "react-redux";
+
+import { updateQuantity, removeItem } from "../store/cartSlice";
 
 
+function CartItems({ item }) {
 
 
-function CartItems({items}) {
+  const dispatch = useDispatch();
+
+
+  const handleQuantityChange = (newQty) => {
+
+    if (newQty >= 1) {
+
+      dispatch(updateQuantity({ id: item.id, quantity: newQty }));
+
+    }
+
+  }
+
 
 
 
   return (
 
-    <div>
+    <div className="cart-item">
 
-      <div className="cart-card">
+      <img src={item.thumbnail} alt={item.title} className="cart-item-img" />
 
-        <img src={items.images[0]} alt="" width="200px" height="200px" className="cart-img" />
+      <div>
 
-        <h3 className="cart-title">{items.title}</h3>
+        <h4>{item.title}</h4>
+        <span className="item-total">${item.price} </span><span>{'(each)'}</span>
 
-        <h2 className="cart-price">$: {items.price}</h2>
+      </div>
+
+      <div className="cart-item-qty">
+
+        <button onClick={() => handleQuantityChange(item.quantity - 1)}>-</button>
+        <span>{" "}</span><span>{item.quantity}</span><span>{" "}</span>
+        <button onClick={() => handleQuantityChange(item.quantity + 1)}>+</button>
+
+      </div>
+
+      <div>
+
+        <p className="item-total">${(item.price * item.quantity).toFixed(2)}</p>
+
+        <button
+          onClick={() => dispatch(removeItem(item.id))}
+        >
+          Remove
+        </button>
 
 
       </div>
@@ -28,5 +63,7 @@ function CartItems({items}) {
 
 
 }
+
+
 
 export default CartItems;

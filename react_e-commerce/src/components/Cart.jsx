@@ -1,5 +1,8 @@
-import { useState } from "react";
+
+
 import { useSelector } from "react-redux";
+
+import { Link } from "react-router-dom";
 
 import CartItems from "./CartItems";
 
@@ -9,31 +12,55 @@ function Cart() {
 
     const cartItems = useSelector(item => item.cart.items);
 
-    console.log("check", cartItems);
 
-    const [items, setItems] = useState([])
-
-    // console.log("check2 ", items);
+    const totalCost = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
 
-    // if (cartItems.length > 0) {
-
-    //     setItems(cartItems)
-    // }
 
 
     return (
 
-        <div>
+        <div className="container cart-page">
 
-            {
-                cartItems.map(item => (
+            <h2>Your Shopping Cart</h2>
 
-                    <CartItems key={item.id} items={item} />
+            {cartItems.length === 0 ? (
 
-               ))
-            }
+                <div className="empty-cart">
 
+                    <p>Your cart feels light. Let's add some items!</p>
+
+                    <Link to="/" className="empty-btn">Go Shopping</Link>
+
+                </div>
+
+            ) : (
+
+                <div className="cart-layout">
+
+                    <div className="cart-list">
+
+                        {cartItems.map(item => (
+                            <CartItems key={item.id} item={item} />
+                        ))}
+
+                    </div>
+
+                    <div className="cart-summary">
+
+                        <h3>Order Summary</h3>
+
+                        <div className="summary-row">
+                            <span>Items Subtotal:</span>
+                            <span>${totalCost.toFixed(2)}</span>
+                        </div>
+
+                        <Link to="/checkout" className="checkout-btn">Proceed to Checkout</Link>
+
+                    </div>
+
+                </div>
+            )}
 
         </div>
 

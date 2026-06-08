@@ -21,7 +21,8 @@ function Header() {
     const searchQuery = useSelector(data => data.product.searchQuery)
 
 
-
+   // Calculates total number of items in shopping cart
+   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);   // cartItems.length
 
 
 
@@ -45,7 +46,7 @@ function Header() {
                 <Link to="/" className="cart-home">Home</Link>
 
                 <Link to="/cart" className="carticon">
-                    🛒Cart <span className="cartbadge">{cartItems.length}</span>
+                    🛒Cart <span className="cartbadge">{totalItems}</span>
                 </Link>
 
 
