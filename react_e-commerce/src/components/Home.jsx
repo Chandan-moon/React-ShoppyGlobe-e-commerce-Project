@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import useFetch from "../utils/useFetch";
 import { Link } from "react-router-dom";
+import ProductItems from "./ProductItems";
 
 
 
@@ -29,20 +30,7 @@ function Home() {
 
             {products.products.map((item) => (
 
-                <Link to={`/product/${item.id}`} key={item.id} className="link-line">
-
-                    <div className="cart-card" key={item.id}>
-
-                        <img src={item.images[0]} alt="" width="200px" height="200px" className="cart-img" />
-
-                        <h3 className="cart-title">{item.title}</h3>
-
-                        <h2 className="cart-price">$: {item.price}</h2>
-
-
-                    </div>
-
-                </Link>
+                 <ProductItems key={item.id} products={item} />
 
             ))
 

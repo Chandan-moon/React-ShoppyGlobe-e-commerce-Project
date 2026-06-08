@@ -2,8 +2,19 @@
 
 import { Link } from "react-router-dom";
 
+import { useSelector } from "react-redux"
+
+
+
+
 
 function Header() {
+
+
+ 
+ const cartItems = useSelector(data => data.cart.items);
+
+ 
 
 
     return (
@@ -23,6 +34,9 @@ function Header() {
                 </Link>
 
             </nav>
+
+
+            <li>{cartItems.length} Itm</li>
 
         </div>
 

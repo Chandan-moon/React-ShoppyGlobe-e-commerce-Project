@@ -1,11 +1,43 @@
 
 
-import React from 'react'
+import { useDispatch } from "react-redux"
+import { addToCart } from "../store/cartSlice";
+import { Link } from "react-router-dom";
 
-function ProductItems() {
+
+function ProductItems({products}) {
+
+
+const dispatch = useDispatch();
+
+
+
+
   return (
-    <div>ProductItems</div>
+
+    <div>
+
+      <div className="cart-card">
+
+        <img src={products.images[0]} alt="" width="200px" height="200px" className="cart-img" />
+
+        <h3 className="cart-title">{products.title}</h3>
+
+       <span className="cart-price">$: {products.price}</span>
+
+        
+        <button onClick={() => dispatch(addToCart(products))}>Add to Cart</button>
+         
+        <Link to={`/product/${products.id}`}>View Details</Link>
+        
+
+      </div>
+
+    </div>
+
   )
+
+
 }
 
 export default ProductItems

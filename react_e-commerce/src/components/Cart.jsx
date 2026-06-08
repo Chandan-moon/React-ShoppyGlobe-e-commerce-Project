@@ -1,28 +1,43 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
+import CartItems from "./CartItems";
 
 
-
-function Cart(props) {
-
-    //console.log(props)
+function Cart() {
 
 
+    const cartItems = useSelector(item => item.cart.items);
 
-return (
+    console.log("check", cartItems);
 
+    const [items, setItems] = useState([])
 
-    <div className="cart-card">
-
-        <img src={props.productDetails.images[0]} alt="" width="200px" height="200px" className="cart-img"/>
-
-        <h3 className="cart-title">{props.productDetails.title}</h3>
-
-        <h2 className="cart-price">$: {props.productDetails.price}</h2>
+    // console.log("check2 ", items);
 
 
-    </div>
+    // if (cartItems.length > 0) {
 
-)
+    //     setItems(cartItems)
+    // }
+
+
+    return (
+
+        <div>
+
+            {
+                cartItems.map(item => (
+
+                    <CartItems key={item.id} items={item} />
+
+               ))
+            }
+
+
+        </div>
+
+    )
 
 
 }

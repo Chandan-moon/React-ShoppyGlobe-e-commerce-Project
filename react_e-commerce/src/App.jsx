@@ -1,23 +1,28 @@
 import Header from "./components/Header";
-import ProductList from "./components/ProductList";
+// import ProductList from "./components/ProductList";
 
 import { Outlet } from "react-router-dom";
 
+import { Provider } from "react-redux";
+
+import { appStore } from "./store/appStore";
 
 
-function App() { 
+
+
+function App() {
 
 
 
   return (
 
-    <>
+    <Provider store={appStore}>
 
       <Header />
 
       <Outlet />
 
-    </>
+    </Provider>
 
 
   )
