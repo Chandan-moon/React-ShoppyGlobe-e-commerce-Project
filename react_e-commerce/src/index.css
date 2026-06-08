@@ -379,7 +379,65 @@ background-color: #1D4ED8;
 color: white;
 padding: 10px;
 margin-top: 100px;
+border-radius: 10px;
 
-border: 1px solid black;
+}
 
+.total-cost {
+
+color: #ffa410;
+font-size: 20px;
+
+}
+
+.total-cost-number {
+
+  color: green;
+  font-size: 17px;
+}
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+
+/* Checkout Grid styling definitions */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+
+
+.checkout-form {
+  background: #ffffff6e;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
 }

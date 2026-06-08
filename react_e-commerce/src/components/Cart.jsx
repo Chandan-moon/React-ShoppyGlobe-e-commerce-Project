@@ -52,7 +52,9 @@ function Cart() {
 
                         <div className="summary-row">
                             <span>Items Subtotal:</span>
-                            <span>${totalCost.toFixed(2)}</span>
+                            <span className="total-cost">$
+                                <span className="total-cost-number">{totalCost.toFixed(2)}</span>
+                            </span>
                         </div>
 
                         <Link to="/checkout" className="checkout-btn">Proceed to Checkout</Link>

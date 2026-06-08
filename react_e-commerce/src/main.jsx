@@ -11,6 +11,7 @@ import Home from './components/Home.jsx';
 
 import ProductDetail from './components/ProductDetail.jsx';
 import Cart from './components/Cart.jsx';
+import Checkout from './components/CheckOut.jsx';
 
 
 
@@ -41,6 +42,13 @@ const appRouter = createBrowserRouter([
 
         path: "/product/:id",
         element: <ProductDetail />
+
+      },
+
+      {
+
+        path: "/checkout",
+        element: <Checkout />
 
       },
 
