@@ -2,7 +2,7 @@
 
 
 
-function CartItems() {
+function CartItems({items}) {
 
 
 
