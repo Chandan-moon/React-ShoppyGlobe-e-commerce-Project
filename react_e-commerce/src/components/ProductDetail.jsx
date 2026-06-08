@@ -34,13 +34,13 @@ function ProductDetail() {
 
                 filterProduct.map((item) => (
 
-                    <div className="cart-card" key={item.id}>
+                    <div className="cart-card2" key={item.id}>
 
-                        <img src={item.images[0]} alt="" width="200px" height="200px" className="cart-img" />
+                        <img src={item.images[0]} alt="" width="200px" height="200px" className="cart-img2" />
 
-                        <h3 className="cart-title">{item.title}</h3>
+                        <h3 className="cart-title2">{item.title}</h3>
 
-                        <h2 className="cart-price">$: {item.price}</h2>
+                        <h2 className="cart-price2">$: {item.price}</h2>
 
 
                     </div>

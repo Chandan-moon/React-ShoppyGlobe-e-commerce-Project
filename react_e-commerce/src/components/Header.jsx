@@ -2,7 +2,9 @@
 
 import { Link } from "react-router-dom";
 
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { setSearchQuery } from "../store/productSlice";
+
 
 
 
@@ -11,10 +13,16 @@ import { useSelector } from "react-redux"
 function Header() {
 
 
- 
- const cartItems = useSelector(data => data.cart.items);
 
- 
+    const cartItems = useSelector(data => data.cart.items);
+
+    const dispatch = useDispatch();
+
+    const searchQuery = useSelector(data => data.product.searchQuery)
+
+
+
+
 
 
     return (
@@ -23,20 +31,25 @@ function Header() {
 
             <h2>🛍️ ShoppyGlobe</h2>
 
-            <input type="text" placeholder=" Search products" className="header-input" />
+            <input type="text" placeholder=" Search products"
+
+                value={searchQuery}
+                onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+
+                className="header-input" />
+
+
 
             <nav className="nav-menu">
 
-                <Link to="/">Home</Link>
+                <Link to="/" className="cart-home">Home</Link>
 
-                <Link to="/cart" className="cart-icon">
-                    🛒 Cart <span className="cart-badge">{}</span>
+                <Link to="/cart" className="carticon">
+                    🛒Cart <span className="cartbadge">{cartItems.length}</span>
                 </Link>
 
+
             </nav>
-
-
-            <li>{cartItems.length} Itm</li>
 
         </div>
 

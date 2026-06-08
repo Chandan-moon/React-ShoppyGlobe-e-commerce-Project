@@ -5,10 +5,10 @@ import { addToCart } from "../store/cartSlice";
 import { Link } from "react-router-dom";
 
 
-function ProductItems({products}) {
+function ProductItems({ products }) {
 
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
 
 
@@ -23,13 +23,15 @@ const dispatch = useDispatch();
 
         <h3 className="cart-title">{products.title}</h3>
 
-       <span className="cart-price">$: {products.price}</span>
+        <span className="cart-price">$: {products.price}</span>
 
-        
-        <button onClick={() => dispatch(addToCart(products))}>Add to Cart</button>
-         
-        <Link to={`/product/${products.id}`}>View Details</Link>
-        
+        <div className="product-footer">
+
+          <button onClick={() => dispatch(addToCart(products))}>Add to Cart</button>
+
+          <Link to={`/product/${products.id}`} className="itemlink">View Details</Link>
+
+        </div>
 
       </div>
 
